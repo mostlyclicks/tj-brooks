@@ -1,0 +1,31 @@
+<h1>Listing graphs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Code</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @graphs.each do |graph| %>
+      <tr>
+        <td><%= graph.name %></td>
+        <td><%= graph.description %></td>
+        <td><%= graph.code.html_safe %></td>
+        <td><%= link_to 'Show', graph %></td>
+        <td><%= link_to 'Edit', edit_graph_path(graph) %></td>
+        <td><%= link_to 'Destroy', graph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Graph', new_graph_path %>

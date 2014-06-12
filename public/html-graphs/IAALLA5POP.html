@@ -1,0 +1,144 @@
+<!-- LineChart generated in R 3.0.2 by googleVis 0.4.7 package -->
+<!-- Mon Apr 21 22:05:17 2014 -->
+
+
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataLineChartID109446784755 () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ new Date(2000,0,1),
+14.679 
+],
+[
+ new Date(2001,0,1),
+14.357 
+],
+[
+ new Date(2002,0,1),
+14.333 
+],
+[
+ new Date(2003,0,1),
+14.405 
+],
+[
+ new Date(2004,0,1),
+14.397 
+],
+[
+ new Date(2005,0,1),
+14.454 
+],
+[
+ new Date(2006,0,1),
+14.477 
+],
+[
+ new Date(2007,0,1),
+14.459 
+],
+[
+ new Date(2008,0,1),
+14.469 
+],
+[
+ new Date(2009,0,1),
+14.436 
+],
+[
+ new Date(2010,0,1),
+14.348 
+],
+[
+ new Date(2011,0,1),
+14.253 
+],
+[
+ new Date(2012,0,1),
+14.237 
+],
+[
+ new Date(2013,0,1),
+14.169 
+] 
+];
+data.addColumn('date','date');
+data.addColumn('number','value');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartLineChartID109446784755() {
+var data = gvisDataLineChartID109446784755();
+var options = {};
+options["allowHtml"] = true;
+options["title"] = "Resident Population in Allamakee County, IA";
+options["height"] =    400;
+options["width"] =    600;
+options["legend"] = {position: 'none'};
+
+
+    var chart = new google.visualization.LineChart(
+    document.getElementById('LineChartID109446784755')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartLineChartID109446784755);
+})();
+function displayChartLineChartID109446784755() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartLineChartID109446784755"></script>
+ 
+<!-- divChart -->
+  
+<div id="LineChartID109446784755"
+  style="width: 600px; height: 400px;">
+</div>
