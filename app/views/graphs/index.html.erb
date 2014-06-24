@@ -1,4 +1,4 @@
-<h1>Listing graphs</h1>
+<!-- <h1>Listing graphs</h1>
 
 <table>
   <thead>
@@ -13,19 +13,31 @@
   </thead>
 
   <tbody>
-    <% @graphs.each do |graph| %>
+    <%# @graphs.each do |graph| %>
       <tr>
-        <td><%= graph.name %></td>
-        <td><%= graph.description %></td>
-        <td><%= graph.code.html_safe %></td>
-        <td><%= link_to 'Show', graph %></td>
-        <td><%= link_to 'Edit', edit_graph_path(graph) %></td>
-        <td><%= link_to 'Destroy', graph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= graph.name %></td>
+        <td><%#= graph.description %></td>
+        <td><%#= graph.code.html_safe %></td>
+        <td><%#= link_to 'Show', graph %></td>
+        <td><%#= link_to 'Edit', edit_graph_path(graph) %></td>
+        <td><%#= link_to 'Destroy', graph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
 
 <br>
+ -->
+<div class="container">
+  <div class="row">
+    <% @graphs.each do |graph| %>
+    <div class="col-md-4 graph" >
+      <div><%= graph.code.html_safe %></div>
+      <h3><%= link_to  graph.name, graph %></h3>
+    </div>
+    <% end %>
+  </div>
+
+</div>
 
 <%= link_to 'New Graph', new_graph_path %>

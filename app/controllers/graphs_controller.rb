@@ -1,5 +1,6 @@
 class GraphsController < ApplicationController
   before_action :set_graph, only: [:show, :edit, :update, :destroy]
+  before_filter :disable_xss_protection
 
   # GET /graphs
   # GET /graphs.json
@@ -60,6 +61,14 @@ class GraphsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+    protected
+      def disable_xss_protection
+        # Disabling this is probably not a good idea,
+        # but the header causes Chrome to choke when being
+        # redirected back after a submit and the page contains an iframe.
+        response.headers['X-XSS-Protection'] = "0"
+      end
 
   private
     # Use callbacks to share common setup or constraints between actions.
