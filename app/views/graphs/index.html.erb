@@ -31,8 +31,11 @@
 <div class="container">
   <div class="row">
     <% @graphs.each do |graph| %>
-    <div class="col-md-4 graph" >
-      <div><%= graph.code.html_safe %></div>
+    <div class="col-md-4 " >
+      <div class="graph">
+        <%= graph.code.html_safe %>
+        
+      </div>
       <h3><%= link_to  graph.name, graph %></h3>
     </div>
     <% end %>
